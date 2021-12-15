@@ -13,3 +13,13 @@ symfony console doctrine:migrations:migrate
 docker-compose exec database /bin/bash
 mysql -u root -p symfony_docker
  > show tables
+
+// Docker commands
+// Remove images if the the parent folder was deleted or renamed
+docker rmi Image Image
+
+// Remove all images
+docker rmi $(docker images -a -q) --force
+
+// Remove all containers
+docker rm $(docker ps -a -f status=exited -q)
