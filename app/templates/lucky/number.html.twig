@@ -1,0 +1,11 @@
+{# templates/lucky/number.html.twig #}
+{# number is a variable which value is set in the LuckyController 
+the toolbar can be showed by adding directly the <body> tag or by
+extend the base.html.twig file like the code below #}
+
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Your lucky number is {{ number }}</h1>
+{% endblock %}
+
