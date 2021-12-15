@@ -1,0 +1,15 @@
+// Work from an existing DB
+php bin/console doctrine:mapping:import "App\Entity" annotation --path=src/Entity
+// generates getter/setter methods for all Entities
+php bin/console make:entity --regenerate App
+
+// To modify the database
+docker-compose exec php /bin/bash
+symfony console make:entity ENTITY_NAME
+symfony console make:migration
+symfony console doctrine:migrations:migrate
+
+// To check the database
+docker-compose exec database /bin/bash
+mysql -u root -p symfony_docker
+ > show tables
