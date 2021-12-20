@@ -4,7 +4,7 @@ Steps to setup:
 
 1. Run inside app folder:
 
-   > compose install
+   > composer install
 
 2. Run inside the root folder:
 
